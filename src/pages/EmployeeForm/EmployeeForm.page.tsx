@@ -58,6 +58,7 @@ export const EmployeeForm: FC = () => {
 					open: true,
 					title: t('modal.editEmployee.title'),
 					message: t('modal.editEmployee.message'),
+					canCancel: false,
 					onAccept: () => {
 						setModalData(defaultModalData)
 						navigate(AppRoutes.EMPLOYEES)
@@ -73,6 +74,7 @@ export const EmployeeForm: FC = () => {
 				open: true,
 				title: t('modal.addEmployee.title'),
 				message: t('modal.addEmployee.message'),
+				canCancel: false,
 				onAccept: () => {
 					setModalData(defaultModalData)
 					navigate(AppRoutes.EMPLOYEES)
@@ -83,6 +85,7 @@ export const EmployeeForm: FC = () => {
 				open: true,
 				title: t('modal.errorAddingEmployee.title'),
 				message: t('modal.errorAddingEmployee.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

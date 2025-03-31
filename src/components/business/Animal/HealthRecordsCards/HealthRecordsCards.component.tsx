@@ -43,6 +43,7 @@ export const HealthRecordsCards: FC<HealthRecordsCardsProps> = ({
 			open: true,
 			title: t('modal.deleteHealthRecord.title'),
 			message: t('modal.deleteHealthRecord.message'),
+			canCancel: true,
 			onAccept: async () => {
 				setLoading(true)
 				await HealthRecordsService.updateHealthRecordsStatus(uuid, false)
@@ -50,7 +51,6 @@ export const HealthRecordsCards: FC<HealthRecordsCardsProps> = ({
 				setModalData(defaultModalData)
 				setLoading(false)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 	return (

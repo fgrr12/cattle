@@ -2,7 +2,7 @@ import { Box } from '@/styles/box'
 import { colors } from '@/styles/variables'
 import styled from 'styled-components'
 
-export const ModalDialog = styled.dialog`
+export const ModalDialog = styled.dialog<{ closedBy: string }>`
 	position: fixed;
 	top: 50%;
 	left: 50%;

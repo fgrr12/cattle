@@ -44,6 +44,7 @@ export const ProductionRecordsTable: FC<ProductionRecordsTableProps> = ({
 			open: true,
 			title: t('modal.deleteProductionRecord.title'),
 			message: t('modal.deleteProductionRecord.message'),
+			canCancel: true,
 			onAccept: async () => {
 				setLoading(true)
 				await ProductionRecordsService.updateProductionRecordsStatus(uuid, false)
@@ -51,7 +52,6 @@ export const ProductionRecordsTable: FC<ProductionRecordsTableProps> = ({
 				setModalData(defaultModalData)
 				setLoading(false)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 	return (

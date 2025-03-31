@@ -43,9 +43,10 @@ export const Employees: FC = () => {
 			setEmployees(data.filter((employee) => employee.uuid !== user!.uuid))
 		} catch (error) {
 			setModalData({
-				open: true,
 				title: t('modal.errorGettingEmployees.title'),
 				message: t('modal.errorGettingEmployees.message'),
+				open: true,
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

@@ -82,6 +82,7 @@ export const AnimalForm = () => {
 				open: true,
 				title: t('modal.errorGettingAnimal.title'),
 				message: t('modal.errorGettingAnimal.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {
@@ -118,6 +119,7 @@ export const AnimalForm = () => {
 					open: true,
 					title: t('modal.editAnimal.title'),
 					message: t('modal.editAnimal.message'),
+					canCancel: false,
 					onAccept: () => {
 						setModalData(defaultModalData)
 						navigate(AppRoutes.ANIMAL.replace(':animalUuid', animalUuid))
@@ -129,6 +131,7 @@ export const AnimalForm = () => {
 					open: true,
 					title: t('modal.addAnimal.title'),
 					message: t('modal.addAnimal.message'),
+					canCancel: false,
 					onAccept: () => {
 						setModalData(defaultModalData)
 						setAnimalForm(INITIAL_ANIMAL_FORM)
@@ -140,6 +143,7 @@ export const AnimalForm = () => {
 				open: true,
 				title: t('modal.errorAddingAnimal.title'),
 				message: t('modal.errorAddingAnimal.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

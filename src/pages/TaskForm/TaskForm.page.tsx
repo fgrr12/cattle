@@ -47,6 +47,7 @@ export const TaskForm = () => {
 				open: true,
 				title: t('modal.errorAddingTask.title'),
 				message: t('modal.errorAddingTask.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

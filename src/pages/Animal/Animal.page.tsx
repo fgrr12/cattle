@@ -46,13 +46,13 @@ export const Animal: FC = () => {
 			open: true,
 			title: t('modal.removeAnimal.title'),
 			message: t('modal.removeAnimal.message'),
+			canCancel: true,
 			onAccept: async () => {
 				setLoading(true)
 				await AnimalsService.deleteAnimal(animal.uuid, false)
 				setModalData(defaultModalData)
 				setLoading(false)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 
@@ -141,6 +141,7 @@ export const Animal: FC = () => {
 				open: true,
 				title: t('modal.errorGettingAnimal.title'),
 				message: t('modal.errorGettingAnimal.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

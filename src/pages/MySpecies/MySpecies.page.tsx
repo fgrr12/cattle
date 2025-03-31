@@ -80,12 +80,12 @@ export const MySpecies: FC = () => {
 			open: true,
 			title: t('modal.deleteSpecies.title'),
 			message: t('modal.deleteSpecies.message'),
+			canCancel: true,
 			onAccept: async () => {
 				const sps = species.filter((specie) => specie.uuid !== specieUuid)
 				setSpecies(sps)
 				setModalData(defaultModalData)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 
@@ -94,6 +94,7 @@ export const MySpecies: FC = () => {
 			open: true,
 			title: t('modal.deleteBreed.title'),
 			message: t('modal.deleteBreed.message'),
+			canCancel: true,
 			onAccept: async () => {
 				const breeds = specie.breeds.filter((breed) => breed.uuid !== breedUuid)
 				specie.breeds = breeds
@@ -101,7 +102,6 @@ export const MySpecies: FC = () => {
 				setSpecies(sps)
 				setModalData(defaultModalData)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 
@@ -146,6 +146,7 @@ export const MySpecies: FC = () => {
 				open: true,
 				title: t('modal.saveSpecies.title'),
 				message: t('modal.saveSpecies.message'),
+				canCancel: true,
 				onAccept: () => {
 					setModalData(defaultModalData)
 				},
@@ -155,8 +156,8 @@ export const MySpecies: FC = () => {
 				open: true,
 				title: t('modal.errorEditingSpecies.title'),
 				message: t('modal.errorEditingSpecies.message'),
+				canCancel: true,
 				onAccept: () => setModalData(defaultModalData),
-				onCancel: () => setModalData(defaultModalData),
 			})
 		} finally {
 			setLoading(false)

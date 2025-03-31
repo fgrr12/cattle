@@ -54,6 +54,7 @@ export const ProductionRecordForm = () => {
 					open: true,
 					title: t('modal.editProductionRecord.title'),
 					message: t('modal.editProductionRecord.message'),
+					canCancel: false,
 					onAccept: () => {
 						setModalData(defaultModalData)
 						navigate(AppRoutes.ANIMAL.replace(':animalUuid', productionRecordForm.animalUuid))
@@ -65,6 +66,7 @@ export const ProductionRecordForm = () => {
 					open: true,
 					title: t('modal.addProductionRecord.title'),
 					message: t('modal.addProductionRecord.message'),
+					canCancel: false,
 					onAccept: () => {
 						setModalData(defaultModalData)
 						navigate(AppRoutes.ANIMAL.replace(':animalUuid', productionRecordForm.animalUuid))
@@ -76,6 +78,7 @@ export const ProductionRecordForm = () => {
 				open: true,
 				title: t('modal.errorAddingProductionRecord.title'),
 				message: t('modal.errorAddingProductionRecord.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {
@@ -95,6 +98,7 @@ export const ProductionRecordForm = () => {
 				open: true,
 				title: t('modal.errorGettingProductionRecord.title'),
 				message: t('modal.errorGettingProductionRecord.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

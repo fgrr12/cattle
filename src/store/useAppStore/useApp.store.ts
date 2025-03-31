@@ -2,9 +2,10 @@ import { create } from 'zustand'
 import type { AppModalData, AppStore, AppStoreActions } from './useApp.types'
 
 const DEFAULT_MODAL_DATA: AppModalData = {
+	open: false,
 	title: '',
 	message: '',
-	open: false,
+	canCancel: true,
 }
 
 export const useAppStore = create<AppStore & AppStoreActions>((set) => ({
@@ -24,5 +25,6 @@ export const GENERIC_MODAL_DATA: AppModalData = {
 	title: 'Error inesperado',
 	message: 'Ha ocurrido un error inesperado, por favor intenta de nuevo.',
 	open: true,
+	canCancel: false,
 	onAccept: () => useAppStore.getState().setModalData(DEFAULT_MODAL_DATA),
 }

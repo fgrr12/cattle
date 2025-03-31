@@ -1,13 +1,22 @@
 import { useEffect, useRef } from 'react'
+
 import { Button } from '@/components/ui/Button'
+import { useAppStore } from '@/store/useAppStore'
+
 import type { ModalProps } from './Modal.types'
+
 import * as S from './Modal.styles'
 
-export const Modal: FC<ModalProps> = ({ title, message, open, onAccept, onCancel, ...rest }) => {
+export const Modal: FC<ModalProps> = ({ title, message, open, canCancel, onAccept, ...rest }) => {
 	const { modalRef } = useModal(open)
+	const { defaultModalData, setModalData } = useAppStore()
+
+	const onCancel = () => {
+		setModalData(defaultModalData)
+	}
 
 	return (
-		<S.ModalDialog ref={modalRef} {...rest}>
+		<S.ModalDialog ref={modalRef} closedBy="any" {...rest}>
 			<S.Modal>
 				<S.ModalHeader>
 					<h2>{title}</h2>
@@ -17,7 +26,11 @@ export const Modal: FC<ModalProps> = ({ title, message, open, onAccept, onCancel
 				</S.ModalSection>
 				<S.ButtonsSection>
 					<Button onClick={onAccept}>Aceptar</Button>
-					{onCancel && <Button onClick={onCancel}>Cancelar</Button>}
+					{canCancel && (
+						<form onSubmit={onCancel} method="dialog">
+							<Button type="submit">Cancelar</Button>
+						</form>
+					)}
 				</S.ButtonsSection>
 			</S.Modal>
 		</S.ModalDialog>

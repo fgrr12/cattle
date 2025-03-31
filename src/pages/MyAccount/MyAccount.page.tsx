@@ -85,6 +85,7 @@ export const MyAccount: FC = () => {
 				open: true,
 				title: t('myProfile.modal.editMyAccount.title'),
 				message: t('myProfile.modal.editMyAccount.message'),
+				canCancel: false,
 				onAccept: () => {
 					setModalData(defaultModalData)
 				},
@@ -94,6 +95,7 @@ export const MyAccount: FC = () => {
 				open: true,
 				title: t('myProfile.modal.errorEditingMyAccount.title'),
 				message: t('myProfile.modal.errorEditingMyAccount.message'),
+				canCancel: false,
 				onAccept: () => {
 					setModalData(defaultModalData)
 				},
@@ -114,6 +116,7 @@ export const MyAccount: FC = () => {
 				open: true,
 				title: t('myFarm.modal.editMyFarm.title'),
 				message: t('myFarm.modal.editMyFarm.message'),
+				canCancel: false,
 				onAccept: () => {
 					setModalData(defaultModalData)
 				},
@@ -123,6 +126,7 @@ export const MyAccount: FC = () => {
 				open: true,
 				title: t('myFarm.modal.errorMyFarm.title'),
 				message: t('myFarm.modal.errorMyFarm.message'),
+				canCancel: false,
 				onAccept: () => {
 					setModalData(defaultModalData)
 				},

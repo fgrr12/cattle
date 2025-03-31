@@ -40,6 +40,7 @@ export const RelatedAnimalsTable: FC<RelatedAnimalsTableProps> = ({
 			open: true,
 			title: t('modal.deleteRelatedAnimal.title'),
 			message: t('modal.deleteRelatedAnimal.message'),
+			canCancel: true,
 			onAccept: async () => {
 				setLoading(true)
 				await RelatedAnimalsService.deleteRelatedAnimal(animalUuid)
@@ -48,7 +49,6 @@ export const RelatedAnimalsTable: FC<RelatedAnimalsTableProps> = ({
 				setModalData(defaultModalData)
 				setLoading(false)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 

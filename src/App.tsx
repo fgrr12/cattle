@@ -107,8 +107,8 @@ export const App: FC = () => {
 					title={modalData.title}
 					message={modalData.message}
 					open={modalData.open}
+					canCancel={modalData.canCancel}
 					onAccept={modalData.onAccept}
-					onCancel={modalData.onCancel}
 				/>
 				<Loading open={appLoading} />
 			</AppContent>

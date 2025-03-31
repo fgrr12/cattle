@@ -44,6 +44,7 @@ export const HealthRecordsTable: FC<HealthRecordsTableProps> = ({
 			open: true,
 			title: t('modal.deleteHealthRecord.title'),
 			message: t('modal.deleteHealthRecord.message'),
+			canCancel: true,
 			onAccept: async () => {
 				setLoading(true)
 				await HealthRecordsService.updateHealthRecordsStatus(uuid, false)
@@ -51,7 +52,6 @@ export const HealthRecordsTable: FC<HealthRecordsTableProps> = ({
 				setModalData(defaultModalData)
 				setLoading(false)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 	return (

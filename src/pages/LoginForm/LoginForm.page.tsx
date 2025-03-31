@@ -38,6 +38,7 @@ export const LoginForm: FC = () => {
 				open: true,
 				title: t('modal.errorLoggingIn.title'),
 				message: t('modal.errorLoggingIn.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {
@@ -55,6 +56,7 @@ export const LoginForm: FC = () => {
 				open: true,
 				title: t('modal.errorLoggingIn.title'),
 				message: t('modal.errorLoggingIn.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

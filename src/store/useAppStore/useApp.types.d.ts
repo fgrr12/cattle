@@ -18,6 +18,6 @@ export interface AppModalData {
 	title: string
 	message: string
 	open: boolean
+	canCancel: boolean
 	onAccept?: () => void
-	onCancel?: () => void
 }

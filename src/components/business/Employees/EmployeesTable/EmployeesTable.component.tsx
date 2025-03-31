@@ -24,9 +24,10 @@ export const EmployeesTable: FC<EmployeesTableProps> = ({ employees, removeEmplo
 
 	const handleDeleteEmployee = (user: User) => async () => {
 		setModalData({
-			open: true,
 			title: t('modal.deleteEmployee.title'),
 			message: t('modal.deleteEmployee.message'),
+			open: true,
+			canCancel: true,
 			onAccept: async () => {
 				setLoading(true)
 				await EmployeesService.deleteEmployee(user.uuid)
@@ -34,7 +35,6 @@ export const EmployeesTable: FC<EmployeesTableProps> = ({ employees, removeEmplo
 				setModalData(defaultModalData)
 				setLoading(false)
 			},
-			onCancel: () => setModalData(defaultModalData),
 		})
 	}
 	return (

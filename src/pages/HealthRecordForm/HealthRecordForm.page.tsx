@@ -70,6 +70,7 @@ export const HealthRecordForm = () => {
 				open: true,
 				title: t('modal.errorGettingHealthRecord.title'),
 				message: t('modal.errorGettingHealthRecord.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {
@@ -90,6 +91,7 @@ export const HealthRecordForm = () => {
 					open: true,
 					title: t('modal.editHealthRecord.title'),
 					message: t('modal.editHealthRecord.message'),
+					canCancel: false,
 					onAccept: () => {
 						setModalData(defaultModalData)
 						navigate(AppRoutes.ANIMAL.replace(':animalUuid', healthRecordForm.animalUuid))
@@ -101,6 +103,7 @@ export const HealthRecordForm = () => {
 					open: true,
 					title: t('modal.addHealthRecord.title'),
 					message: t('modal.addHealthRecord.message'),
+					canCancel: false,
 					onAccept: () => {
 						setModalData(defaultModalData)
 						navigate(AppRoutes.ANIMAL.replace(':animalUuid', healthRecordForm.animalUuid))
@@ -112,6 +115,7 @@ export const HealthRecordForm = () => {
 				open: true,
 				title: t('modal.errorAddingHealthRecord.title'),
 				message: t('modal.errorAddingHealthRecord.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {

@@ -60,6 +60,7 @@ export const Animals = () => {
 				open: true,
 				title: t('modal.errorGettingAnimals.title'),
 				message: t('modal.errorGettingAnimals.message'),
+				canCancel: false,
 				onAccept: () => setModalData(defaultModalData),
 			})
 		} finally {
